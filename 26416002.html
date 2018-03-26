@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width = device-width, initial-scale=1"/>
+	<link rel = "stylesheet" href =jmobile/jquery.mobile-1.4.5.css />
+	<script src =jmobile/jquery.js></script>
+	<script src =jmobile/jquery.mobile-1.4.5.js></script>
+	
+<script>
+$(document).ready(function(){
+    
+    $("#btn_convert").click(function(){
+    	$inputD = $("#inputDecimal").text()
+    	$("#test1").text("$ValBinary");
+    	$("#test2").text("$ValHexa");
+	});
+});
+</script>
+
+<style>
+	/* Basic styles */
+	.rwd-example .ui-body {
+	    text-align: left;
+	    border-color: #ddd;
+	}
+	.rwd-example p {
+	    color: #777;
+	    line-height: 140%
+	}
+	/* Stack all blocks to start */
+	.rwd-example .ui-block-a,
+	.rwd-example .ui-block-b,
+	.rwd-example .ui-block-c {
+	    width: 100%;
+	    float: none;
+	}
+	/* Collapsing borders */
+	.rwd-example > div + div .ui-body {
+	    border-top-width: 0;
+	}
+	/* 1st breakpoint - Float B and C, leave A full width on top */
+	@media all and (min-width: 42em) {
+	    .rwd-example {
+	        overflow: hidden; /* Use this or a "clearfix" to give the container height */
+	    }
+	    .rwd-example .ui-body {
+	       min-height: 14em;
+	    }
+	    .rwd-example .ui-block-b,
+	    .rwd-example .ui-block-c {
+	      float: left;
+	      width: 49.95%;
+	    }
+	    .rwd-example .ui-block-b p,
+	    .rwd-example .ui-block-c p {
+	      font-size: .8em;
+	    }
+	    .rwd-example > div + div .ui-body {
+	        border-top-width: 1px;
+	    }
+	    .rwd-example > div:first-child .ui-body {
+	        border-bottom-width: 0;
+	    }
+	    .rwd-example > div:last-child .ui-body {
+	        border-left-width: 0;
+	    }
+	}
+	/* 2nd breakpoint - Float all, 50/25/25 */
+	@media all and (min-width: 55em) {
+	    .rwd-example .ui-body {
+	       min-height: 18em;
+	    }
+	    .rwd-example .ui-block-a,
+	    .rwd-example .ui-block-c {
+	      float: left;
+	      width: 49.95%;
+	    }
+	    .rwd-example .ui-block-b,
+	    .rwd-example .ui-block-c {
+	      float: left;
+	      width: 24.925%;
+	    }
+	    .rwd-example > div:first-child .ui-body {
+	        border-bottom-width: 1px;
+	    }
+	    .rwd-example > div + div .ui-body {
+	        border-left-width: 0;
+	    }
+	}
+	/* 3rd breakpoint - Bump up font size at very wide screens */
+	@media all and (min-width: 75em) {
+	    .rwd-example .ui-body {
+	      font-size: 125%;
+	    }
+	    .rwd-example .ui-block-a,
+	    .rwd-example .ui-block-c {
+	      float: left;
+	      width: 49.95%;
+	    }
+	    .rwd-example .ui-block-b,
+	    .rwd-example .ui-block-c {
+	      float: left;
+	      width: 24.925%;
+	    }
+	}	
+</style>
+</head>
+<body>
+	<div data-role=page id = win1>
+		<div data-role=header>
+			<h1>Kalkulator Logika</h1>
+			<form>
+			<div class="ui-field-contain" align="center">
+			    <select name="select-native-17" id="select-native-17">
+			        <option value="win1" selected="selected">Kalkulator Logika</option>
+			        <option value="win2">RGB</option>
+			        <option value="win3">Rangkuman</option>
+			        
+			    </select>
+			</div>
+			</form>			
+			
+		</div>
+		<div data-role=content>
+			<form>
+			     <label>Decimal</label>
+			     <input type="text" data-clear-btn="true" name="text-3" id="text-3" value="" id="inputDecimal">
+			     <p id="test1">Binary</p>
+			     <p id="test2">Hexadecimal</p>
+			     <button class="ui-btn" id = "btn_convert">Convert</button>
+			</form>
+
+		</div>
+		<div data-role=footer data-position = fixed>
+			<h1>Window bottom</h1>
+		</div>
+	</div>
+	<div data-role=page id = win2>
+		<div data-role=header>
+			<h1>RGB</h1>
+			<form>
+			<div class="ui-field-contain" align="center">
+			    <select name="select-native-17" id="select-native-17">
+			        <option value="win1" >Kalkulator Logika</option>
+			        <option value="win2" selected="selected">RGB</option>
+			        <option value="win3">Rangkuman</option>
+			        
+			    </select>
+			</div>
+			</form>	
+			
+		</div>
+	
+		<div data-role=content>
+<form>
+    <label for="slider-1">Red:</label>
+    <input type="range" name="slider-1" id="slider-1" min="0" max="255" value="125">
+	<label for="slider-2">Green:</label>
+    <input type="range" name="slider-2" id="slider-2" min="0" max="255" value="125">
+	<label for="slider-3">Blue:</label>
+    <input type="range" name="slider-3" id="slider-3" min="0" max="255" value="125">
+</form>
+			<input type ="color">
+		</div>
+		<div data-role=footer data-position = fixed>
+			<h1>Window bottom</h1>
+		</div>
+	</div>
+
+	<div data-role=page id = win3>
+		<div data-role=header>
+			<h1>Rangkuman</h1>
+			<form>
+			<div class="ui-field-contain" align="center">
+			    <select name="select-native-17" id="select-native-17">
+			        <option value="win1" >Kalkulator Logika</option>
+			        <option value="win2">RGB</option>
+			        <option value="win3" selected="selected">Rangkuman</option>
+			        
+			    </select>
+			</div>
+			</form>	
+			
+		</div>
+	
+		<div data-role=content>
+			<button class="show-page-loading-msg" data-theme="a" data-textonly="false" data-textvisible="true" data-msgtext="Loading theme a" data-inline="true">A</button>
+			<button class="show-page-loading-msg" data-theme="b" data-textonly="false" data-textvisible="true" data-msgtext="Loading theme b" data-inline="true">B</button>
+			<button class="hide-page-loading-msg" data-inline="true" data-icon="delete">Hide</button>			
+			<div class = "ui-block-c">
+				<div class = "ui-body ui-body-d">
+					<p> Di PPM selama ini sudah belajar menggunakan:</p>
+					<ol data-role="listview">
+					    <li>Github</li>
+					    <li>jMobile</li>
+					    <li>AngularJs</li>
+					</ul>					
+				</div>
+			</div>
+			<div class = "ui-block-c">
+				<div class = "ui-body ui-body-d">
+					<p>gitHub sudah diajari cara melakukan initialisasi, jenis-jenis version control, cara untuk melihat status, menambah file ke staging area, melakukan commit, menambah remote directory di server, melakukan push ke remote directory, melakukan pull dari remote directory, mencari diff perubahan, dan membuat branch </p>
+				</div>
+			</div>
+			<div class = "ui-block-c">
+				<div class = "ui-body ui-body-d">
+					<p>jMobile sudah diajari bagaimana membuat page, cara untuk berpindah dari satu page ke page lain, menggunakan button sederhana, cara membuat header,footer,dan content</p>
+				</div>
+			</div>
+			
+			<div class = "ui-block-c">
+				<div class = "ui-body ui-body-d">
+					<p>AngularJS sudah diajari cara menggunakan angularJS secara sederhana, membuat controller, menambah filter di output, melakukan pengulangan, dan membuat event onclick  </p>
+				</div>
+			</div>
+			
+
+			</div>
+		</div>
+		<div data-role=footer data-position = fixed>
+			<h1>Window bottom</h1>
+		</div>
+	</div>
+
+<script>
+	$(function(){
+
+	    $('select').change(function() {
+	        var nextpage = $(this).children('option:selected').attr('value');
+	        
+	// case: Multi-page
+	        $.mobile.changePage( '#' + nextpage );
+	        
+	// case: Single page
+	//      $.mobile.changePage( nextpage + '.html' );
+	        
+	    });
+
+	});
+	
+
+</script>
+
+<script>
+	$( document ).on( "click", ".show-page-loading-msg", function() {
+	    var $this = $( this ),
+	        theme = $this.jqmData( "theme" ) || $.mobile.loader.prototype.options.theme,
+	        msgText = $this.jqmData( "msgtext" ) || $.mobile.loader.prototype.options.text,
+	        textVisible = $this.jqmData( "textvisible" ) || $.mobile.loader.prototype.options.textVisible,
+	        textonly = !!$this.jqmData( "textonly" );
+	        html = $this.jqmData( "html" ) || "";
+	    $.mobile.loading( "show", {
+	            text: msgText,
+	            textVisible: textVisible,
+	            theme: theme,
+	            textonly: textonly,
+	            html: html
+	    });
+	})
+	.on( "click", ".hide-page-loading-msg", function() {
+	    $.mobile.loading( "hide" );
+	});	
+
+</script>
+
+</body>
+</html>
